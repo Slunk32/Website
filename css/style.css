@@ -1,0 +1,117 @@
+html,
+body {
+    height:100%;
+    background-color:#001610;
+}
+
+a {
+    text-decoration: none;
+    color: #00cc99;
+}
+
+a:link { color: #00cc99; }
+a:visited { color: #00cc99; };
+a:hover { color: #000000; };
+a:active { color: #00cc99; };
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    float: left;
+}
+
+.jq_terminal {
+    width: 60%;
+    margin: 20px 20px;
+}
+
+.panel {
+    background-color: white;
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.logo {
+    font-family: "HelveticaNeue-Bold";
+    font-size: 55px;
+    letter-spacing: -4px;
+    margin: 30px;
+    float: right;
+    color: #00cc99;
+}
+
+.description {
+    font-family: "HelveticaNeue";
+    font-size: 14px;
+    margin-top: -20px;
+    margin-right: 25px;
+    margin-left: 75px;
+    float: right;
+    text-align: center;
+    color: #909090;
+}
+
+#instafeed {
+    text-align: right;
+    max-width: 400px;
+    margin-top: 30px;
+    margin-right: 20px;
+    float: right;
+}
+
+#instafeed a {
+    padding:5px 5px 1px 5px;
+    margin:10px;
+    border:1px solid #e1e1e1;
+    display:inline-block;
+    /*border-radius: 4px;*/
+    position:relative;
+}
+
+#destext {
+  margin-left: 275px;
+
+}
+
+#places {
+  margin-right: 30px;
+}
+
+.social {
+    margin-top:  7%;
+    margin-left: 70px;
+
+}
+
+@media (max-width: 641px ) {
+
+    .jq_terminal {
+        visibility: hidden;
+    }
+
+    .panel {
+        position: absolute;
+        right: auto;
+        width: 100%;
+    }
+
+    .description {
+        margin-top: -15px;
+        float: right;
+        color: #909090;
+    }
+
+    .social {
+        float: right;
+        width: 100px;
+        padding: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        /*background-color: #000;*/
+    }
+}

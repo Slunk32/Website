@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Russell Salerno</title>
+    <meta name="author" content="Russell Salerno"/>
+    <meta name="Description" content="Developer in training. Pool-hall junkie. Addicted to tech, music & smoothies. SF &#55357;&#56960; SD"/>
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.mousewheel-min.js"></script>
+    <script src="js/jquery.terminal-min.js"></script>
+    <script type="text/javascript" src="js/instafeed.min.js"></script>
+    <link href="css/jquery.terminal.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+      <div class="box jq_terminal">
+        Last Login: <span id="today"></span><br>
+      </div>
+      <div class="box panel">
+        <div class="logo">Russell Salerno</div>
+        <div id = 'destext' class="description"> Junior Developer, Pool-hall junkie, Animal Lover, Addicted to tech, music & smoothies.
+          SF -> SD</div>
+        <div id="instafeed"></div>
+        <div class="social">
+          <a href="mailto:russell.j.salerno@gmail.com?subject=Website Inquiry"><img src="css/icon_email.png"></a>
+          <a href="http://www.twitter.com/russells"><img src="css/icon_twitter.png"></a>
+          <a href="http://www.facebook.com/rsalerno"><img src="css/icon_facebook.png"></a>
+        </div>
+      </div>
+
+    <!--<div class="panel">
+      onsetuhoesntuaouesn
+    </div>-->
+
+    <script>
+
+    var myVar=setInterval(function(){myTimer()},1000);
+
+    function myTimer(){
+      var d1=new Date();
+      var d2=new Date('1/15/2013');
+      var t=d1.toLocaleTimeString();
+      var dif = d2.getTime()
+
+      // Number of milliseconds since 1/15/2013 divided by sec / min /
+      var days = ((Math.abs(d1.getTime()) - Math.abs(d2.getTime()))/60/60/24/1000).toFixed(5)
+      var seconds = numberWithCommas(((d1.getTime() - d2.getTime())/1000).toFixed(0))
+      //document.getElementById("seconds").innerHTML=seconds;
+      document.getElementById("today").innerHTML=d1;
+      console.log(dif)
+      console.log(d1.getTime())
+      console.log(d1)
+      console.log(d2)
+
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    }
+
+    var feed = new Instafeed({
+        get: 'user',
+        userId: 199531572,
+        accessToken: '2262146.467ede5.80753d012fd54a4bbf34e5df3f4a822f',
+        limit: 8,
+        // resolution: 'low_resolution',
+        after: function () {
+    var images = $("#instafeed").find('a');
+    $.each(images, function(index, image) {
+      var delay = (index * 75) + 'ms';
+      $(image).css('-webkit-animation-delay', delay);
+      $(image).css('-moz-animation-delay', delay);
+      $(image).css('-ms-animation-delay', delay);
+      $(image).css('-o-animation-delay', delay);
+      $(image).css('animation-delay', delay);
+      $(image).addClass('animated flipInX');
+    });
+  },
+    });
+    feed.run();
+
+
+    $('.jq_terminal').terminal({
+
+    work_history: function() {
+        this.echo("\n")
+        this.echo("[[b;#00cc99;#001610]10/2013 - 4/2015        Twitter                San Francisco, CA]")
+        this.echo("[[b;#00cc99;#001610]Support Agent]")
+        this.echo("- Named top 4 performer in the global support organization")
+        this.echo("- Tasked to lead projects in increasing productivity")
+        this.echo("- Increased team efficiency and optimization, including new workflow templates")
+        this.echo("- Collaborated with multiple teams (Engineering, Spam Operations, and Trust & Safety)")
+        this.echo("\n")
+        this.echo("[[b;#00cc99;#001610]01/2013 - 09/2013       Google                 Mountain View, CA]")
+        this.echo("[[b;#00cc99;#001610]Project Coordinator]")
+        this.echo("- Effectively solved 250 user inquiries a week in a live chat support")
+        this.echo("- Supervised team quality and performance monitoring. Reduced the error rating to ~2%")
+        this.echo("- Independently took responsibility to learn and create training documentation for Google+")
+        this.echo("- Trained entire team on Google Plus help page")
+        this.echo("\n")
+    },
+
+    projects: function() {
+        this.echo("\n")
+        this.echo("Pool Ghost: iOS App using Swift/Xcode. Fully featured pool app for pool players to statistically track their practice sessions")
+        this.echo("\n")
+    },
+
+    social: function() {
+        this.echo("\n")
+        this.echo("Twitter: http://www.twitter.com/russells")
+        this.echo("Facebook: http://www.facebook.com/rsalerno")
+        this.echo("Instagram: http://www.instagram.com/slunk32")
+        this.echo("\n")
+    },
+
+    skills: function() {
+        this.echo("\n")
+        this.echo("- Ruby     - Ruby on Rails     - HTML5/CSS     - Javascript     - jQuery     -SQL")
+        this.echo("- Git      - BDD-testing with RSpec     - Node     - Swift/Xcode (current project)")
+        this.echo("\n")
+    },
+
+    help: function() {
+        this.echo("\n")
+        this.echo("    education    projects    help     skills    social    work_history")
+    },
+
+    education: function() {
+        this.echo("[[b;#00cc99;#001610]2016                   LEARN                      San Diego, CA]")
+        this.echo("[[i;#00cc99;#001610]Full Stack Development Student]")
+        this.echo("- LEARN is a hands on, immersive and intense, bootcamp-style school. From 9-5 everyday for 3 months,")
+        this.echo("  I worked in a classroom learning new programming tools and concepts")
+        this.echo("\n")
+        this.echo("\n")
+        this.echo("[[b;#00cc99;#001610]09/2007 - 12/2011        SF State               San Francisco, CA]")
+        this.echo("[[i;#00cc99;#001610]Bachelor of Arts in Sociology]")
+        this.echo("- Dean's list honoree")
+        this.echo("- GPA: 3.42, Major GPA: 3.66")
+        this.echo("- Coursework: Data Analysis in Education, Research Methods, Population & Social Dynamics")
+        this.echo("\n")
+        this.echo("[[b;#00cc99;#001610]09/2010 - 1/2011        University of Amsterdam            Amsterdam, NL]")
+        this.echo("[[i;#00cc99;#001610]Gender Studies]")
+        this.echo("- Authored research paper comparing Dutch and American adolescent ideals of masculinity")
+        this.echo("\n")
+    },
+
+    // cd: function(a) {
+    //     this.echo(location.href ="http://"+a)
+    // },
+
+    '\n': function() {
+        this.echo()
+    },
+
+    '': function() {
+        this.echo()
+    },
+
+}, {
+      prompt: '> ',
+      greetings: "Welcome to interactive terminal\nDouble tap 'tab' or type 'help' for commands, type 'clear' to restart\n",
+      tabcompletion: true,
+
+      onBlur: function() {
+                  // prevent loosing focus
+                  return false;
+              }
+ });
+
+    </script>
+  </body>
+</html>
